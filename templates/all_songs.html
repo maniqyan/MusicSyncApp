@@ -1,0 +1,25 @@
+{% extends "layout.html" %} {% block title %}All Songs{% endblock %} {% block
+content %} {% if message %}
+<p>{{ message }}</p>
+{% else %}
+<h2>Soulmate's Song</h2>
+{% if soulmate_song %}
+<div class="row justify-content-center">
+  <div class="col-md-12">
+    <ul class="list-unstyled">
+      <li class="media mb-3">
+        <div class="media-body text-center">
+          <a
+            href="{{ soulmate_song.url }}"
+            target="_blank"
+            class="btn btn-primary"
+            >Play on Spotify</a
+          >
+        </div>
+      </li>
+    </ul>
+  </div>
+</div>
+{% else %}
+<p>Your soulmate has not uploaded a song for today yet.</p>
+{% endif %} {% endif %} {% endblock %}
